@@ -17,6 +17,11 @@ namespace contatoslista
             get { return primeirosexo; }
             set { primeirosexo = value; }
         }
+        public string Sobrenome
+        {
+            get { return sobrenome; }
+            set { sobrenome = value; }
+        }
         public string Telefone
         {
             get { return telefone; }
@@ -49,7 +54,11 @@ namespace contatoslista
 
         public override string ToString()
         {
-            string saida = String.Empty; 
+            string saida = String.Empty;
+            saida += string.Format("{0}, {1}", PrimeiroNome, sobrenome);
+            saida += String.Format("{0}-{1}-{2}", Telefone.Substring(0, 1), Telefone.Substring(2,4),Telefone.Substring(7,3));
+
+            return saida;   
         }
     }
 }
