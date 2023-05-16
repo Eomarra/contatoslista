@@ -30,7 +30,23 @@ namespace contatoslista
         private void label2_Click(object sender, EventArgs e)
         {
             Contato objetoContato = new Contato();
-            lstContato.Items.Add(objetoContato.ToString);
+            lstContato.Items.Add(objetoContato.ToString());
+        }
+
+        private void btnAddContato_Click(object sender, EventArgs e)
+        {
+            Contato objetoContato = new Contato(txtNome.Text, txtSobrenome.Text, txtTelefone.Text, txtEmail.Text);
+            lstContato.Items.Add(objetoContato.ToString());
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

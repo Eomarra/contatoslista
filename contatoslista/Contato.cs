@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Cryptography.X509Certificates;
 
 namespace contatoslista
 {
@@ -11,6 +8,7 @@ namespace contatoslista
         private string primeirosexo;
         private string sobrenome;
         private string telefone;
+        private string email;
 
         public string PrimeiroNome
         {
@@ -29,38 +27,50 @@ namespace contatoslista
             {
                 if (value.Length == 11)
 
-                    Telefone = value;
+                    telefone = value;
                 else
 
-                    Telefone = "00-00000-0000";
+                    telefone = "00000000000";
             }
         }
+                
+            
+          
+            public string Email
+        {
+            get { return email ; }
+            set { email = value; }
+        }
+        
+
         //Método Construtor da Classe 
 
-        public Contato()
+        public  Contato()
         {
             PrimeiroNome = "José";
             sobrenome = "Carlos Libralon";
-            Telefone = "6999-9290900-11";
-        }
+            Telefone = "69999290900";
+}
         //Sobrecarga do método construtor da classe 
         
-        public Contato(string primeironome ,string sobrenome , string telefone)
+        public Contato(string primeironome ,string sobrenome , string telefone , string email)
         {
             PrimeiroNome= primeironome;
             Sobrenome = sobrenome;
-            Telefone = telefone;    
+            Telefone = telefone;
+            Email = email;
         }
 
         public override string ToString()
         {
             string saida = String.Empty;
-            saida += string.Format("{0}, {1}", PrimeiroNome, sobrenome);
-            saida += String.Format("{0}-{1}-{2}", Telefone.Substring(0, 1), Telefone.Substring(2,4),Telefone.Substring(7,3));
-
+            saida += string.Format("{0} {1}", PrimeiroNome, Sobrenome);
+            saida += " ";
+            saida += String.Format("{0}-{1}-{2}", Telefone.Substring(0, 1), Telefone.Substring(2,4),Telefone.Substring(7,3)); 
+            saida += " ";00000000
+            saida += string.Format(Email);
+                
             return saida;   
         }
-    }
+    
 }
-               
-
