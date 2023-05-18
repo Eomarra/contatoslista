@@ -33,29 +33,29 @@ namespace contatoslista
                     telefone = "00000000000";
             }
         }
-                
-            
-          
-            public string Email
+
+
+
+        public string Email
         {
-            get { return email ; }
+            get { return email; }
             set { email = value; }
         }
-        
+
 
         //Método Construtor da Classe 
 
-        public  Contato()
+        public Contato()
         {
             PrimeiroNome = "José";
             sobrenome = "Carlos Libralon";
             Telefone = "69999290900";
-}
+        }
         //Sobrecarga do método construtor da classe 
-        
-        public Contato(string primeironome ,string sobrenome , string telefone , string email)
+
+        public Contato(string primeironome, string sobrenome, string telefone, string email)
         {
-            PrimeiroNome= primeironome;
+            PrimeiroNome = primeironome;
             Sobrenome = sobrenome;
             Telefone = telefone;
             Email = email;
@@ -66,11 +66,12 @@ namespace contatoslista
             string saida = String.Empty;
             saida += string.Format("{0} {1}", PrimeiroNome, Sobrenome);
             saida += " ";
-            saida += String.Format("{0}-{1}-{2}", Telefone.Substring(0, 1), Telefone.Substring(2,4),Telefone.Substring(7,3)); 
-            saida += " ";00000000
+            saida += String.Format("{0}-{1}-{2}", Telefone.Substring(0, 1), Telefone.Substring(2, 4), Telefone.Substring(7, 3));
+            saida += " "; 
             saida += string.Format(Email);
-                
-            return saida;   
+
+            return saida;
         }
-    
+
+    }
 }
