@@ -1,6 +1,6 @@
 ﻿namespace contatoslista
 {
-    partial class Form1
+    partial class form1
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -38,6 +38,7 @@
             this.lstContato = new System.Windows.Forms.ListBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
+            this.btnordenar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -126,11 +127,22 @@
             this.txtEmail.TabIndex = 9;
             this.txtEmail.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // Form1
+            // btnordenar
+            // 
+            this.btnordenar.Location = new System.Drawing.Point(259, 371);
+            this.btnordenar.Name = "btnordenar";
+            this.btnordenar.Size = new System.Drawing.Size(437, 36);
+            this.btnordenar.TabIndex = 10;
+            this.btnordenar.Text = "Ordenar";
+            this.btnordenar.UseVisualStyleBackColor = true;
+            this.btnordenar.Click += new System.EventHandler(this.btnordenar_Click);
+            // 
+            // form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnordenar);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lstContato);
@@ -141,7 +153,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Name = "Form1";
+            this.Name = "form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -161,6 +173,7 @@
         private System.Windows.Forms.ListBox lstContato;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.Button btnordenar;
     }
 }
 

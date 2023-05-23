@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace contatoslista
 {
-    public partial class Form1 : Form
+    public partial class form1 : Form
     {
         private Contato[] listaDeContato = new Contato[1];
-        public Form1()
+        public form1()
         {
             InitializeComponent();
         }
@@ -115,6 +115,33 @@ namespace contatoslista
             txtSobrenome.Text = string.Empty;
             txtTelefone.Text = string.Empty;
             txtEmail.Text = string.Empty;
+        }
+
+        private void btnordenar_Click(object sender, EventArgs e)
+        {
+            Ordenar();
+            AtualizarDisplay();
+
+          
+        }
+        private void Ordenar()
+        {
+            Contato temporario;
+           bool trocar = true;
+            do
+            {
+                trocar = false;
+                for (int i = 0; i < (listaDeContato.Length - 1); i++)
+                {
+                    if (listaDeContato[i].PrimeiroNome.CompareTo(listaDeContato[i + 1].PrimeiroNome) > 0)
+                    {
+                        temporario = listaDeContato[i];
+                        listaDeContato[i] = listaDeContato[i + 1];
+                        listaDeContato[i + 1] = temporario;
+                        trocar = true;
+                    }
+                }
+            } while (trocar == true); 
         }
     }
 }
